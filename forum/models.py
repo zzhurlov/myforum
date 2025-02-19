@@ -6,9 +6,7 @@ from django.contrib.auth.models import User
 class Topic(models.Model):
     title = models.CharField(max_length=100)
     slug = models.SlugField(max_length=250)
-    author = models.ForeignKey(
-        User, on_delete=models.SET_DEFAULT, default="Неизвестный автор"
-    )
+    author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
 
     publish = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(auto_now=True)
@@ -23,6 +21,7 @@ class Post(models.Model):
 
     publish = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(auto_now=True)
+    author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
 
     class Meta:
         ordering = ["-publish"]
@@ -30,3 +29,6 @@ class Post(models.Model):
 
     def __str__(self):
         return self.message
+
+    def get_absolute_url(self):
+        pass

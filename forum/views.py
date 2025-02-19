@@ -16,3 +16,7 @@ def topic_list(request):
         topics = paginator.page(paginator.num_pages)
 
     return render(request, "forum/topic/topic_list.html", {"topics": topics})
+
+
+def post_list(request):
+    pass

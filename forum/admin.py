@@ -6,3 +6,8 @@ from forum.models import Topic, Post
 class TopicAdmin(admin.ModelAdmin):
     list_display = ["title", "slug", "author", "publish"]
     prepopulated_fields = {"slug": ("title",)}
+
+
+@admin.register(Post)
+class PostAdmin(admin.ModelAdmin):
+    list_display = ["topic", "message", "author", "publish"]

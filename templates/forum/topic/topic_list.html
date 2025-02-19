@@ -3,9 +3,9 @@
 {% block content %}
     <h1>Topics</h1>
     {% for topic in topics %}
-        <h2>
+        <h4>
             <a>{{ topic.title }}</a>
-        </h2>
+        </h4>
         <p class="date">
             Published {{ topic.publish }} by {{ topic.author }}
         </p>
