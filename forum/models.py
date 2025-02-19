@@ -10,7 +10,7 @@ class Topic(models.Model):
         User, on_delete=models.SET_DEFAULT, default="Неизвестный автор"
     )
 
-    publish = models.DateTimeField(auto_now_add=True)
+    publish = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:

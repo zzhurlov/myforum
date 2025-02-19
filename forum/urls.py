@@ -3,5 +3,5 @@ from forum import views
 
 
 urlpatterns = [
-    path("main/", views.fff, name="main"),
+    path("forum/", views.topic_list, name="forum"),
 ]

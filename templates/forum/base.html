@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{% static 'forum.css' %}" rel="stylesheet">
+</head>
+<body>
+<div id="sidebar1">
+        <h2>Forum</h2>
+    </div>
+<div id="content">
+    {% block content %}
+    {% endblock %}
+</div>
+<div id="sidebar2">
+    <h2>About</h2>
+</div>
+</body>
+</html>
